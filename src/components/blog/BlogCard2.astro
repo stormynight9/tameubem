@@ -1,0 +1,18 @@
+---
+// Fundations
+import Text from "@/components/fundations/elements/Text.astro";
+// Content
+const { title, description, url } = {
+  url: "/blog/posts/" + Astro.props.post.id,
+  title: Astro.props.post.data.title,
+  description: Astro.props.post.data.description,
+};
+---
+
+<article class="relative flex flex-col group text-balance">
+  <a href={url} title={title} class="absolute inset-0 z-10"> </a>
+  <Text tag="h3" variant="textSM" class="font-medium text-base-900 duration-300"
+    >{title}</Text
+  >
+  <Text tag="p" variant="textSM" class="text-base-500 mt-2">{description}</Text>
+</article>

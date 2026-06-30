@@ -1,0 +1,14 @@
+---
+description: Coordinated changes to astro.config.mjs and src/content.config.ts only when necessary.
+globs:
+  - astro.config.mjs
+  - src/content.config.ts
+---
+
+# `astro.config.mjs` ↔ `content.config.ts`
+
+- **Site URL:** `defineConfig({ site: '...' })` feeds sitemap and `context.site` in `src/pages/rss.xml.js`. Change once for canonical URLs.
+- **Tailwind:** Styling is applied via `vite.plugins: [tailwindcss()]` from `@tailwindcss/vite`, not a separate Astro Tailwind integration package.
+- **Integrations:** Only `@astrojs/sitemap` is registered in `astro.config.mjs`. RSS uses `@astrojs/rss` inside `src/pages/rss.xml.js` only.
+- **Content collections:** `src/content.config.ts` owns all Zod schemas and glob bases. Editing a schema requires checking every `getCollection("<name>")` usage, layouts, and Markdown under `src/content/<name>/`.
+- **Markdown / Shiki:** `markdown` and top-level `shikiConfig` in `astro.config.mjs` control drafts and syntax highlighting; keep behavior in sync if you change preview/drafts expectations.

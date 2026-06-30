@@ -1,0 +1,137 @@
+---
+// Assets
+import { Image } from "astro:assets";
+// Fundations
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Button from "@/components/fundations/elements/Button.astro";
+import Text from "@/components/fundations/elements/Text.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+// Components
+const { frontmatter } = Astro.props;
+---
+
+<BaseLayout hideBigLogo={true}>
+  <section>
+    <Wrapper variant="standard" class="py-2">
+      <div class="text-center">
+        <Text
+          tag="a"
+          href="javascript:history.back()"
+          variant="textXS"
+          class="inline-flex items-center gap-1 hover: transition-colors"
+        >
+          &larr; Go back
+        </Text>
+        <Text
+          tag="p"
+          variant="textXL"
+          class="max-w-2xl mx-auto font-light mt-4 font-serif uppercase leading-6"
+        >
+          <span class="block opacity-50">
+            {frontmatter.title}
+          </span>
+
+          <span class="block">{frontmatter.description}</span>
+        </Text>
+      </div>
+
+      <Button
+        isLink={true}
+        href="#_"
+        size="xs"
+        variant="muted"
+        class="mt-4 w-fit mx-auto"
+      >
+        Buy {frontmatter.title} for ${frontmatter.price}
+      </Button>
+
+      <div
+        class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-balance lg:gap-y-24 text-center"
+      >
+        <div>
+          <Text tag="h3" variant="textBase" class="font-medium text-base-900"
+            >Specificatons</Text
+          >
+          <ul role="list" class="flex flex-col mt-2 text-xs">
+            {
+              frontmatter.specifications.map((spec) => (
+                <li>
+                  <span class="sr-only">{spec.name}</span>
+                  <Text tag="p" variant="textXS" class="text-base-600 ">
+                    {spec.value}
+                  </Text>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+        <div>
+          <Text tag="h3" variant="textBase" class="font-medium text-base-900"
+            >Includes</Text
+          >
+          <ul role="list" class="text-xs">
+            {
+              frontmatter.highlights.map((highlight) => (
+                <li>
+                  <Text tag="p" variant="textXS" class="text-base-600 ">
+                    {highlight}
+                  </Text>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+        <div>
+          <Text tag="h3" variant="textBase" class="font-medium text-base-900"
+            >License</Text
+          >
+          <Text tag="p" variant="textXS" class="mt-2 text-base-600">
+            {frontmatter.license}
+          </Text>
+        </div>
+      </div>
+
+      <div
+        class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-y-24"
+      >
+        <Image
+          width={1000}
+          height={1000}
+          src={frontmatter.image.url}
+          alt={frontmatter.image.alt}
+          class="w-full aspect-9/12 object-cover"
+        />
+        {
+          frontmatter.images.map((image) => (
+            <Image
+              width={1000}
+              height={1000}
+              src={image.url}
+              alt={image.alt}
+              class="w-full aspect-9/12 object-cover"
+            />
+          ))
+        }
+      </div>
+      <div class="mt-8 pt-8 border-t border-base-200 text-center">
+        <Text tag="h3" variant="textBase" class="font-medium text-base-900"
+          >Frequently Asked Questions</Text
+        >
+        <div class="mt-4 space-y-4">
+          {
+            frontmatter.faq.map((item) => (
+              <div>
+                <Text tag="h4" variant="textSM" class="text-base-900 ">
+                  {item.question}
+                </Text>
+                <Text tag="p" variant="textXS" class="mt-2 text-base-500 ">
+                  {item.answer}
+                </Text>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </Wrapper>
+  </section>
+</BaseLayout>

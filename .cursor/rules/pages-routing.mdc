@@ -1,0 +1,19 @@
+---
+description: File-based routing and layout usage under src/pages.
+globs:
+  - src/pages/**
+---
+
+# Pages & routing (`src/pages/**`)
+
+- **Default shell:** Most marketing pages use `BaseLayout` from `@/layouts/BaseLayout.astro` with optional `hideBigLogo`, `hideNavigation`, `hideFooter`.
+- **Dynamic routes:** `[...slug].astro` maps `params.slug` to `entry.id` for `team`, `store`, `gallery`, `legal`, and `posts` (blog). Blog tag pages use `blog/tags/[tag].astro` with `params.tag`.
+- **URL contracts (must stay consistent with cards/RSS):**
+  - Blog posts: `/blog/posts/{id}` — see `src/components/blog/BlogCard1.astro`, `src/pages/rss.xml.js`
+  - Tags: `/blog/tags/{tag}`
+  - Team: `/team/{id}`
+  - Store: `/store/{id}`
+  - Gallery: `/gallery/posts/{id}` — see `GalleryCard1.astro`
+  - Legal: `/legal/{id}`
+- **Layouts per area:** `BlogLayout`, `TeamLayout`, `StoreLayout`, `GalleryLayout`, `LegalLayout` receive rendered Markdown via `<Content />` and pass `frontmatter` / `page.data` / `entry.data` as implemented in each `[...slug]` file.
+- **No MDX:** Do not add `.mdx` unless the project adds `@astrojs/mdx` to `package.json` and `astro.config.mjs`.

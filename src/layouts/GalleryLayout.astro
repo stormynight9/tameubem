@@ -1,0 +1,128 @@
+---
+// Assets
+import { Image } from "astro:assets";
+// Fundations
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Text from "@/components/fundations/elements/Text.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+const { frontmatter } = Astro.props;
+---
+
+<BaseLayout hideBigLogo={true} hideNavigation={true} hideFooter={true}>
+  <section class={`${frontmatter.bgColor} ${frontmatter.textColor}`}>
+    <Wrapper variant="standard" class="py-8 text-center">
+      <Text
+        tag="a"
+        href="javascript:history.back()"
+        variant="textXS"
+        class="inline-flex items-center gap-1 hover: transition-colors"
+      >
+        &larr; Go back
+      </Text>
+      <Text
+        tag="p"
+        variant="textXL"
+        class="max-w-xl mx-auto font-light mt-4 font-serif uppercase text-center leading-6"
+      >
+        <span class="block opacity-50">
+          {frontmatter.category}
+        </span>
+
+        <span class="block">{frontmatter.title}</span>
+      </Text>
+      <Text
+        tag="p"
+        variant="textXL"
+        class="max-w-xl mx-auto font-light mt-2 font-serif uppercase text-center leading-6"
+      >
+        {frontmatter.description}
+      </Text>
+
+      <div class={`${frontmatter.imageGrid} mt-8`}>
+        {
+          frontmatter.thumbnail && (
+            <Image
+              src={frontmatter.thumbnail.url}
+              alt={frontmatter.thumbnail.alt}
+              class={`object-cover ${frontmatter.thumbnailClass}`}
+            />
+          )
+        }
+        {
+          frontmatter.images.map((image) => (
+            <Image
+              src={image.url}
+              alt={image.alt}
+              class={`object-cover ${image.class}`}
+            />
+          ))
+        }
+      </div>
+    </Wrapper>
+  </section>
+</BaseLayout>
+<script type="module">
+  import KeenSlider from "https://cdn.jsdelivr.net/npm/keen-slider@6.8.6/+esm";
+  // Autoplay plugin
+  const autoplay = (slider) => {
+    let timeout;
+    let mouseOver = false;
+    function clearNextTimeout() {
+      clearTimeout(timeout);
+    }
+    function nextTimeout() {
+      clearTimeout(timeout);
+      if (mouseOver) return;
+      timeout = setTimeout(() => {
+        slider.next();
+      }, 3000); // Adjust time if needed
+    }
+    slider.on("created", () => {
+      slider.container.addEventListener("mouseover", () => {
+        mouseOver = true;
+        clearNextTimeout();
+      });
+      slider.container.addEventListener("mouseout", () => {
+        mouseOver = false;
+        nextTimeout();
+      });
+      nextTimeout();
+    });
+    slider.on("dragStarted", clearNextTimeout);
+    slider.on("animationEnded", nextTimeout);
+    slider.on("updated", nextTimeout);
+  };
+  const keenSlider = new KeenSlider(
+    "#keen-slider",
+    {
+      loop: true,
+      defaultAnimation: {
+        duration: 1500,
+      },
+      detailsChanged: (s) => {
+        s.slides.forEach((element, idx) => {
+          element.style.opacity = s.track.details.slides[idx].portion;
+        });
+      },
+      slides: {
+        origin: "center",
+        perView: 1,
+        //spacing: 12,
+      },
+      breakpoints: {
+        "(min-width: 1024px)": {
+          slides: {
+            origin: "auto",
+            perView: 2.5,
+            spacing: 2,
+          },
+        },
+      },
+    },
+    [autoplay] //  Add autoplay plugin here
+  );
+  const keenSliderPrevious = document.getElementById("keen-slider-previous");
+  const keenSliderNext = document.getElementById("keen-slider-next");
+  keenSliderPrevious.addEventListener("click", () => keenSlider.prev());
+  keenSliderNext.addEventListener("click", () => keenSlider.next());
+</script>

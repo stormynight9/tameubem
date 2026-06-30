@@ -1,0 +1,16 @@
+---
+import GalleryLayout from "@/layouts/GalleryLayout.astro";
+import { getCollection, render } from "astro:content";
+export async function getStaticPaths() {
+  const blogEntries = await getCollection("gallery");
+  return blogEntries.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+<GalleryLayout frontmatter={entry.data}>
+  <Content />
+</GalleryLayout>

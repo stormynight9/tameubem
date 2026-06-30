@@ -1,0 +1,36 @@
+---
+// Assets
+import Logo from "@/components/assets/Logo.astro";
+// Fundations
+import Text from "@/components/fundations/elements/Text.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+---
+
+<header>
+  <Wrapper variant="standard" class="bg-white">
+    <div
+      class="items-start py-4 text-center uppercase grid grid-cols-4 gap-4 gap-y-24"
+    >
+      <a href="/"><Logo class="h-8 text-base-900" /></a>
+      <Text
+        tag="h1"
+        variant="textLG"
+        class="order-last font-serif uppercase lg:order-none col-span-full lg:col-span-2 text-base-900"
+      >
+        Curated stillness, crafted style, and quiet emotion — every frame a
+        moment of thoughtful composition.
+      </Text>
+      <div
+        class="flex items-center ml-auto text-xs gap-2 col-span-3 lg:col-span-1"
+      >
+        <a href="/system/overview" class="hover:text-base-500"> Overview </a>
+        <a
+          href="https://buy.polar.sh/polar_cl_S1viOuN9d72_OKzaQI0ugX9wxg-9USVE6BkmaJpoWRo"
+          class="hover:text-base-500"
+        >
+          Buy Semplice
+        </a>
+      </div>
+    </div>
+  </Wrapper>
+</header>

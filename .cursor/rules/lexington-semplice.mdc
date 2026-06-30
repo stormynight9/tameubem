@@ -1,0 +1,14 @@
+---
+description: Global conventions for the Semplice Lexington Astro theme — imports, fundations folder, minimal diffs, package truth.
+alwaysApply: true
+---
+
+# Semplice — global rules
+
+- **Scope:** This repository is the **Semplice** theme (`@lexington/semplice`). Do not invent features, routes, or npm dependencies that are not present in `package.json` or the actual tree.
+- **Imports:** Prefer the `@/*` → `src/*` alias from `tsconfig.json` for new code. Existing files may use relative paths; avoid drive-by normalization unless editing that file anyway.
+- **`fundations` spelling:** The design-system folder is `src/components/fundations/` (not “foundations”). Never rename it; update references only if explicitly requested.
+- **Layouts:** Page-level chrome lives in `src/layouts/BaseLayout.astro` (Navigation, Footer, BigLogo, `BaseHead`). Collection-specific layouts (`BlogLayout`, `GalleryLayout`, `LegalLayout`, `StoreLayout`, `TeamLayout`) wrap content and pass `frontmatter` / `entry.data` from `astro:content`.
+- **Styling:** Tailwind v4 theme tokens and plugins are defined in `src/styles/global.css`. Prefer extending `@theme` and existing components over one-off inline magic values.
+- **SEO package:** `@lexingtonthemes/seo` is used in `src/components/fundations/head/Seo.astro`; keep usage aligned with how Lexington documents `AstroSeo` when changing metadata.
+- **Change discipline:** Smallest diff that solves the task; avoid unrelated refactors, new docs files, or schema changes that aren’t coordinated with all consumers (`getCollection`, layouts, cards).

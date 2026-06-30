@@ -1,0 +1,35 @@
+---
+// Assets
+import { Image } from "astro:assets";
+// Fundations
+import Text from "@/components/fundations/elements/Text.astro";
+// Content
+const { title, url, thumbnail, category } = {
+  url: "/gallery/posts/" + Astro.props.post.id,
+  title: Astro.props.post.data.title,
+  category: Astro.props.post.data.category,
+  thumbnail: Astro.props.post.data.thumbnail.url,
+};
+---
+
+<figure class="relative">
+  <a
+    href={url}
+    aria-label={`See more of: ${title}`}
+    class="absolute inset-0 z-10"
+  >
+    <span class="sr-only">{title}</span>
+    <span class="sr-only">{category}</span>
+  </a>
+  <Image
+    src={thumbnail}
+    alt={title}
+    width={1200}
+    height={1500}
+    sizes="(max-width: 768px) 90vw, 600px"
+    class="object-cover w-full h-auto"
+  />
+  <figcaption class="sr-only">
+    {title} — Category: {category}
+  </figcaption>
+</figure>

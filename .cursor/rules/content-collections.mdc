@@ -1,0 +1,21 @@
+---
+description: Content collection schemas, frontmatter, and image() usage for src/content Markdown.
+globs:
+  - src/content/**
+  - src/content.config.ts
+---
+
+# Content (`src/content/**` + `content.config.ts`)
+
+- **Loader pattern:** Collections are defined in `src/content.config.ts` with `glob({ pattern: "**/*.md", base: "./src/content/<folder>" })`. Export names: `team`, `store`, `gallery`, `posts`, `legal`.
+- **Images:** String fields registered with Zod `image()` must point at valid image paths (existing entries use `/src/images/...`). Breaking these breaks `Image` in layouts and cards.
+- **Required fields (do not omit):**
+  - **team:** `name`, `image.url`, `image.alt`
+           - **store:** `price`, `title`, `checkout`, `license`, `highlights`, `description`, `image`, `images` (array)
+  - **gallery:** `category`, `title`, `description`, `thumbnail`
+  - **posts:** `title`, `pubDate`, `description`, `team` (must equal a `team` entry **id**), `image`, `tags`
+  - **legal:** `page`, `pubDate`
+- **Template files to copy:**  
+  `src/content/team/samuel-ortiz.md`, `src/content/store/1.md`, `src/content/gallery/1.md`, `src/content/posts/1.md`, `src/content/legal/privacy.md`
+- **Schema vs layout:** `BlogLayout.astro` references `frontmatter.category`, but **`category` is not** in the `posts` schema. If you add it to Zod, add it to every post (or remove the layout usage).
+- **Do not widen schemas** without updating every page/layout that reads the collection (see `AGENTS.md`).

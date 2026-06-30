@@ -1,0 +1,53 @@
+---
+// Assets
+import BigLogo from "@/components/assets/BigLogo.astro";
+// Fundations
+import Text from "@/components/fundations/elements/Text.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+---
+
+<footer>
+  <Wrapper variant="standard" class="pb-8 pt-50 lg:pt-100">
+    <BigLogo />
+    <div class="mt-8 space-y-4 w-full">
+      <Text
+        tag="p"
+        variant="textXL"
+        class="max-w-xl mx-auto font-light font-serif uppercase text-center leading-6 text-base-900"
+      >
+        <span class="block"> Exhibition is open </span>
+        From <time datetime="2025-06-01" class="font-sans">
+          <span class="lowercase">1st</span> June</time
+        > 2025 till
+        <span class="font-sans"
+          ><time datetime="2025-06-30"
+            ><span class="lowercase">30th</span> June</time
+          ></span
+        > 2025
+      </Text>
+      <Text
+        tag="p"
+        variant="textBase"
+        class="max-w-xl mx-auto font-serif uppercase text-balance text-center leading-tight text-base-900"
+      >
+        <span>Gallery Mariehamn</span><br />
+        Tuesday–Friday
+        <time datetime="13:00">13:00</time>–<time datetime="19:00">19:00</time> /
+        Weekends
+        <time datetime="12:00">12:00</time>–<time datetime="16:00">16:00</time
+        ><br />
+        Karlsgatan 3 — Mariehamn, Åland
+      </Text>
+      <div
+        class="grid grid-cols-1 text-center md:grid-cols-3 mt-8 uppercase text-base-900"
+      >
+        <Text tag="p" variant="textLG" class="md:text-left"
+          >William Andersson</Text
+        >
+        <Text tag="p" variant="textLG" class="md:text-center">Ebba Nilsson</Text
+        >
+        <Text tag="p" variant="textLG" class="md:text-right">Arvid Nylun</Text>
+      </div>
+    </div>
+  </Wrapper>
+</footer>

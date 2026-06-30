@@ -1,0 +1,126 @@
+---
+// Assets
+import { Image } from "astro:assets";
+import StudioImage from "@/images/assets/studio.jpeg";
+// Fundations
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Text from "@/components/fundations/elements/Text.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+const info = [
+  {
+    title: "Services",
+    columns: [
+      {
+        text: [
+          { text: "Creative Direction" },
+          { text: "Art Direction" },
+          { text: "Editorial & Commercial Photography" },
+          { text: "Campaign Shoots" },
+          { text: "Portraiture & Documentary Work" },
+          { text: "Set Design & Styling" },
+          { text: "Brand Visual Systems" },
+          { text: "Post-Production & Retouching" },
+          { text: "Location Scouting" },
+          { text: "Motion & Short-Form Video" },
+          { text: "Content Strategy for Visual-First Brands" },
+        ],
+      },
+    ],
+  },
+  {
+    title: "Select Clients",
+    columns: [
+      {
+        text: [
+          { text: "Vogue" },
+          { text: "Monocle" },
+          { text: "IKEA" },
+          { text: "Acne Studios" },
+          { text: "Fjällräven" },
+          { text: "Spotify" },
+          { text: "HAY" },
+          { text: "Artek" },
+          { text: "Visit Finland" },
+          { text: "Scandinavian Airlines" },
+          { text: "Your favorite indie brand’s favorite indie brand" },
+        ],
+      },
+    ],
+  },
+  {
+    title: "Recognition",
+    columns: [
+      {
+        text: [
+          { text: "Hasselblad Masters" },
+          { text: "PDN Photo Annual" },
+          { text: "International Photography Awards" },
+          { text: "LensCulture Visual Storytelling" },
+          { text: "Cannes Lions" },
+          { text: "European Design Awards" },
+          { text: "Communication Arts" },
+          { text: "Red Dot" },
+          { text: "A’ Design Award" },
+          { text: "Adobe Design Achievement" },
+        ],
+      },
+    ],
+  },
+];
+---
+
+<BaseLayout hideBigLogo={true}>
+  <section>
+    <Wrapper variant="standard" class="py-2">
+      <div class="text-center max-w-2xl text-balance mx-auto">
+        <Text
+          tag="h2"
+          variant="textBase"
+          class="font-medium text-base-900 font-serif uppercase"
+        >
+          Riflesso is a photography studio tucked away in the Åland Islands —
+          yes, that dreamy Nordic archipelago most people can’t find on a map.
+        </Text>
+        <Text tag="p" variant="textSM" class="font-serif uppercase mt-4">
+          We craft bold, cinematic visuals for brands, humans, and occasional
+          overachieving objects. Whether it’s directing a full-blown campaign or
+          capturing the quiet in-between moments, we bring a sharp eye, dry wit,
+          and no patience for clichés.
+          <br />
+          <br />
+          We don’t just "take photos." We build stories that stick — for brands with
+          vision, artists with edge, and clients who know that average is boring.
+        </Text>
+        <Image
+          width={1400}
+          height={1400}
+          src={StudioImage}
+          alt="#_"
+          class="object-cover object-bottom mt-8 size-full lg:max-h-200"
+        />
+        <div class="mt-8 flex flex-col gap-8">
+          {
+            info.map((section) => (
+              <div>
+                <Text tag="h2" variant="textSM" class="font-medium ">
+                  {section.title}
+                </Text>
+                <div class="mt-1">
+                  {section.columns.map((column) => (
+                    <ul class="space-y-1">
+                      {column.text.map((link) => (
+                        <li class="text-xs text-base-500 ">{link.text}</li>
+                      ))}
+                    </ul>
+                  ))}
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+      <Wrapper />
+    </Wrapper>
+  </section>
+</BaseLayout>

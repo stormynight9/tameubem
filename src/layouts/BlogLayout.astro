@@ -1,0 +1,118 @@
+---
+// Assets
+import { Image } from "astro:assets";
+// Fundations
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Text from "@/components/fundations/elements/Text.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+// Sections
+import BlogCard2 from "@/components/blog/BlogCard2.astro";
+const { frontmatter } = Astro.props;
+import { getEntry } from "astro:content";
+const team = await getEntry("team", frontmatter.team);
+// Get all posts and filter by tag
+import { getCollection } from "astro:content";
+const allPosts = await getCollection("posts");
+const relatedPosts = allPosts.filter((post) =>
+  post.data.tags.some((tag) => frontmatter.tags.includes(tag))
+);
+---
+
+<BaseLayout hideBigLogo={true}>
+  <section>
+    <Wrapper variant="standard" class="py-2 relative">
+      <div class="text-center max-w-xl mx-auto">
+        {
+          frontmatter.tags.map((tag) => (
+            <a
+              class="block w-full text-sm capitalize text-base-500  hover:text-base-900"
+              href={`/blog/tags/${tag}`}
+            >
+              {tag}
+            </a>
+          ))
+        }
+        <Text
+          tag="p"
+          variant="textXL"
+          class="max-w-xl mx-auto font-light mt-4 font-serif uppercase text-center leading-6"
+        >
+          <span class="block opacity-50">
+            {frontmatter.category}
+          </span>
+
+          <span class="block">{frontmatter.title}</span>
+        </Text>
+        <Text
+          tag="p"
+          variant="textXL"
+          class="font-light mt-2 font-serif uppercase text-center leading-6"
+        >
+          {frontmatter.description}
+        </Text>
+        <a href={`/team/${team.id}`} class="absolute inset-0 z-10"></a>
+
+        <Text tag="p" variant="textSM" class="text-base-500 mt-4">
+          <span>
+            Written in
+            <span class="font-medium text-base-500">
+              <time datetime={new Date(frontmatter.pubDate).toISOString()}>
+                {
+                  new Date(frontmatter.pubDate).toLocaleDateString("en-US", {
+                    year: "numeric",
+                    month: "long",
+                    day: "2-digit",
+                  })
+                }
+              </time>
+            </span>
+          </span>
+          <span>
+            by
+            <span class="font-medium text-base-500">
+              {team.data.name}
+            </span>
+          </span>
+        </Text>
+        <Image
+          width={1400}
+          height={1400}
+          src={frontmatter.image.url}
+          alt={frontmatter.image.alt}
+          class="object-cover object-center mt-4 size-full lg:max-h-200"
+        />
+        <Text
+          tag="p"
+          variant="textSM"
+          class="text-base-900 leading-6 text-balance font-serif uppercase mt-8"
+        >
+          <em>{frontmatter.description}</em>
+        </Text>
+      </div>
+
+      <Wrapper variant="prose" class="max-w-xl mx-auto"><slot /></Wrapper>
+    </Wrapper>
+  </section>
+  {
+    relatedPosts.length > 0 && (
+      <section>
+        <Wrapper variant="standard" class="pt-40 relative">
+          <div class="max-w-xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
+            <Text
+              tag="h2"
+              variant="textBase"
+              class="font-medium text-base-900 "
+            >
+              Related posts
+            </Text>
+            <div class="flex flex-col gap-4 lg:col-span-2">
+              {relatedPosts.slice(0, 3).map((post) => (
+                <BlogCard2 post={post} />
+              ))}
+            </div>
+          </div>
+        </Wrapper>
+      </section>
+    )
+  }
+</BaseLayout>

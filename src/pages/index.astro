@@ -1,0 +1,18 @@
+---
+// Fundations
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+// Components
+import GalleryCard1 from "@/components/gallery/GalleryCard1.astro";
+// Content
+import { getCollection } from "astro:content";
+const allGallery = await getCollection("gallery");
+---
+
+<BaseLayout>
+  <section>
+    <Wrapper variant="standard" class="py-2">
+      {allGallery.slice(0, 1).map((post) => <GalleryCard1 post={post} />)}
+    </Wrapper>
+  </section>
+</BaseLayout>

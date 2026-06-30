@@ -1,0 +1,29 @@
+---
+// Fundations
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Text from "@/components/fundations/elements/Text.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+// Components
+import StoreCard from "@/components/store/StoreCard.astro";
+// Content
+import { getCollection } from "astro:content";
+const allProducts = await getCollection("store");
+---
+
+<BaseLayout hideBigLogo={true}>
+  <section>
+    <Wrapper variant="standard" class="py-2">
+      <div class="overflow-hidden">
+        <Text tag="h1" variant="textBase" class="font-medium text-base-900">
+          Store
+        </Text>
+      </div>
+
+      <div
+        class="mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-24 gap-8"
+      >
+        {allProducts.map((post) => <StoreCard post={post} />)}
+      </div>
+    </Wrapper>
+  </section>
+</BaseLayout>

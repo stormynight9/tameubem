@@ -1,0 +1,175 @@
+---
+import { getCollection } from "astro:content";
+const posts = await Promise.all(
+  (await getCollection("posts")).map(async (post) => ({
+    title: post.data.title,
+    pubDate: post.data.pubDate,
+    description: post.data.description,
+    slug: post.id,
+  }))
+);
+---
+
+<div class="relative">
+  <button
+    type="button"
+    id="searchButton"
+    aria-label="Search posts"
+    class="flex items-center h-auto text-base-900"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="size-4"
+      fill="currentColor"
+      viewBox="0 0 256 256"
+    >
+      <path
+        d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"
+      ></path>
+    </svg>
+  </button>
+
+  <div
+    id="searchModal"
+    class="fixed inset-0 z-50 hidden overflow-y-auto bg-black/10 backdrop-blur-sm"
+    role="dialog"
+    aria-modal="true"
+  >
+    <div class="min-h-screen px-4 text-center">
+      <div
+        class="relative inline-block w-full max-w-xl mt-12 mb-8 text-left align-middle lg:mt-48 transition-all transform"
+      >
+        <div class="hidden">
+          <button
+            type="button"
+            id="closeSearch"
+            class="cursor-pointer text-base-400 hover:text-base-600"
+            aria-label="Close search"
+          >
+            ×
+          </button>
+        </div>
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search posts..."
+          class="block w-full h-10 px-4 py-2 text-xs leading-tight align-middle bg-white border border-transparent rounded-full transition duration-300 ease-in-out focus:z-10 text-base-500 ring-1 ring-base-200 placeholder-base-400 focus:border-accent-50 focus:ring-accent-500 focus:ring-2 focus:outline-none shadow-sm"
+        />
+        <div
+          id="searchResults"
+          class="w-full mt-2 overflow-hidden overflow-y-auto rounded-lg max-h-100 divide-y divide-base-200 scrollbar-hide"
+        >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script is:inline define:vars={{ posts }}>
+  window.addEventListener("load", () => {
+    const searchButton = document.getElementById("searchButton");
+    const searchModal = document.getElementById("searchModal");
+    const searchInput = document.getElementById("searchInput");
+    const searchResults = document.getElementById("searchResults");
+    const closeSearch = document.getElementById("closeSearch");
+
+    const fuse = new Fuse(posts, {
+      keys: ["title", "description", "pubDate"],
+      threshold: 0.3,
+      includeMatches: true,
+    });
+
+    searchResults.classList.add("hidden");
+
+    function openSearch(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      searchModal.classList.remove("hidden");
+      document.body.style.overflow = "hidden";
+      setTimeout(() => searchInput.focus(), 100);
+    }
+
+    function closeSearchModal(e) {
+      if (e) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+      searchModal.classList.add("hidden");
+      document.body.style.overflow = "";
+      searchInput.value = "";
+      searchResults.innerHTML = "";
+      searchResults.classList.add("hidden");
+    }
+
+    function renderResults(results) {
+      if (!searchInput.value.trim()) {
+        searchResults.innerHTML = "";
+        searchResults.classList.add("hidden");
+        return;
+      }
+
+      if (results.length === 0) {
+        searchResults.innerHTML = `
+          <div>
+            <h3 class="p-4 duration-300 hover:bg-white/80 backdrop-blur bg-white/90">
+              There's nothing here.
+            </h3>
+          </div>
+        `;
+        searchResults.classList.remove("hidden");
+        return;
+      }
+
+      searchResults.innerHTML = results
+        .map(
+          (result) => `
+          <div class="relative block p-4 duration-300 hover:bg-white/80 backdrop-blur bg-white/90">
+            <a href="/blog/posts/${result.item.slug}" class="absolute inset-0 z-10"></a>
+            <p class="block text-xs text-sm text-base-600">
+              ${new Date(result.item.pubDate).toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "long",
+                day: "2-digit",
+              })}
+            </p>
+            <h3 class="block mt-2 text-sm font-medium text-base-900 ">
+              ${result.item.title}
+            </h3>
+            <p class="block text-xs text-base-600">
+              ${result.item.description}
+            </p>
+          </div>
+        `
+        )
+        .join("");
+
+      searchResults.classList.remove("hidden");
+    }
+
+    searchButton.addEventListener("click", openSearch);
+    searchButton.addEventListener("touchend", openSearch);
+    closeSearch.addEventListener("click", closeSearchModal);
+    closeSearch.addEventListener("touchend", closeSearchModal);
+
+    searchInput.addEventListener("input", (e) => {
+      const value = e.target.value.trim();
+      const results = value ? fuse.search(value) : [];
+      renderResults(results);
+    });
+
+    // Close on escape key
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && !searchModal.classList.contains("hidden")) {
+        closeSearchModal();
+      }
+    });
+
+    // NEW: Click outside modal content to close
+    searchModal.addEventListener("click", (e) => {
+      const modalContent = e.target.closest(".inline-block");
+      if (!modalContent) {
+        closeSearchModal(e);
+      }
+    });
+  });
+</script>
