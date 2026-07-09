@@ -1,7 +1,7 @@
 ---
 category: "Beadwork"
 title: "Queen's Lace"
-description: "Queen's Lace beadwork collection."
+description: "Placeholder description — replace with your own project copy."
 thumbnail:
   url: "https://images.squarespace-cdn.com/content/v1/57e1d57c6b8f5b5e75aaecbb/1485129792485-EHHLDOTGEZVC5WBMHTBE/queens+lace+sea+foam.jpg"
   alt: "Queen's Lace"

@@ -1,7 +1,7 @@
 ---
 category: "Photography"
 title: "Shurlee Sweet"
-description: "Shurlee Sweet wearing Ta Meu Bem jewelry."
+description: "Placeholder description — replace with your own project copy."
 thumbnail:
   url: "https://images.squarespace-cdn.com/content/v1/57e1d57c6b8f5b5e75aaecbb/6864b0cb-699a-4b40-a7fb-ad003b733bc6/Shurlee+-+All+is+Hallow.jpg"
   alt: "Shurlee Sweet"

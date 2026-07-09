@@ -1,7 +1,7 @@
 ---
 category: "Photography"
 title: "Tiana — Joshua Tree"
-description: "Joshua Tree beadwork photoshoot featuring Tiana."
+description: "Placeholder description — replace with your own project copy."
 thumbnail:
   url: "https://images.squarespace-cdn.com/content/v1/57e1d57c6b8f5b5e75aaecbb/1682885644803-1P78QO5QUQTN2OD1PGZF/IMG_87561.jpg"
   alt: "Tiana — Joshua Tree"

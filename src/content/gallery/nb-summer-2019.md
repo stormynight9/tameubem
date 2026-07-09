@@ -1,7 +1,7 @@
 ---
 category: "Photography"
 title: "NB Summer 2019"
-description: "Ta Meu Bem jewelry — Summer 2019."
+description: "Placeholder description — replace with your own project copy."
 thumbnail:
   url: "https://images.squarespace-cdn.com/content/v1/57e1d57c6b8f5b5e75aaecbb/fc341c62-38d6-48f5-939c-e227f9cfb373/TA+MEU+BEM+JEWELRY+SUMMER+2019-finals-0079.jpg"
   alt: "NB Summer 2019"

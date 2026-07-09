@@ -1,7 +1,7 @@
 ---
 category: "Photography"
 title: "Iyanah"
-description: "Iyanah — Ta Meu Bem beadwork photography."
+description: "Placeholder description — replace with your own project copy."
 thumbnail:
   url: "https://images.squarespace-cdn.com/content/v1/57e1d57c6b8f5b5e75aaecbb/e0863ba5-ee5f-4e2c-add5-c640f5577e30/Iyanah+Beadwork+Beyond+Ceremony+by+April+Amelia+-+angelic+woman.jpg"
   alt: "Iyanah"

@@ -8,17 +8,20 @@ import { fileURLToPath } from "node:url";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const galleryDir = join(__dirname, "../src/content/gallery");
 
+const PLACEHOLDER_DESCRIPTION =
+  "Placeholder description — replace with your own project copy.";
+
 const pages = [
-  { slug: "loom-weaving", url: "https://tameubem.com/loom-weaving", title: "Loom Weaving", category: "Beadwork", description: "Handwoven loom beadwork pieces and chokers by Ta Meu Bem." },
-  { slug: "beadwork-portfolio", url: "https://tameubem.com/beadwork-portfolio", title: "My Beadwork", category: "Beadwork", description: "A curated portfolio of beadwork jewelry and embroidery." },
-  { slug: "queens-lace", url: "https://tameubem.com/queens-lace", title: "Queen's Lace", category: "Beadwork", description: "Queen's Lace beadwork collection." },
-  { slug: "iyanah", url: "https://tameubem.com/iyanah", title: "Iyanah", category: "Photography", description: "Iyanah — Ta Meu Bem beadwork photography." },
-  { slug: "ta-meu-bem-x-april-amelia-photography", url: "https://tameubem.com/ta-meu-bem-x-april-amelia-photography", title: "Ta Meu Bem x April Amelia Photography", category: "Photography", description: "Collaboration with April Amelia Photography." },
-  { slug: "beaded-veils", url: "https://tameubem.com/beaded-veils", title: "Ceremonial Beaded Veils", category: "Beadwork", description: "Ceremonial beaded veils and jewelry." },
-  { slug: "visions", url: "https://tameubem.com/visions", title: "Visions", category: "Photography", description: "Visions — Ta Meu Bem jewelry photography." },
-  { slug: "shurlee-sweet", url: "https://tameubem.com/shurlee-sweet", title: "Shurlee Sweet", category: "Photography", description: "Shurlee Sweet wearing Ta Meu Bem jewelry." },
-  { slug: "nb-summer-2019", url: "https://tameubem.com/nb-summer-2019", title: "NB Summer 2019", category: "Photography", description: "Ta Meu Bem jewelry — Summer 2019." },
-  { slug: "tiana-joshua-tree-beadwork-photoshoot", url: "https://tameubem.com/tiana-joshua-tree-beadwork-photoshoot", title: "Tiana — Joshua Tree", category: "Photography", description: "Joshua Tree beadwork photoshoot featuring Tiana." },
+  { slug: "loom-weaving", url: "https://tameubem.com/loom-weaving", title: "Loom Weaving", category: "Beadwork" },
+  { slug: "beadwork-portfolio", url: "https://tameubem.com/beadwork-portfolio", title: "My Beadwork", category: "Beadwork" },
+  { slug: "queens-lace", url: "https://tameubem.com/queens-lace", title: "Queen's Lace", category: "Beadwork" },
+  { slug: "iyanah", url: "https://tameubem.com/iyanah", title: "Iyanah", category: "Photography" },
+  { slug: "ta-meu-bem-x-april-amelia-photography", url: "https://tameubem.com/ta-meu-bem-x-april-amelia-photography", title: "Ta Meu Bem x April Amelia Photography", category: "Photography" },
+  { slug: "beaded-veils", url: "https://tameubem.com/beaded-veils", title: "Ceremonial Beaded Veils", category: "Beadwork" },
+  { slug: "visions", url: "https://tameubem.com/visions", title: "Visions", category: "Photography" },
+  { slug: "shurlee-sweet", url: "https://tameubem.com/shurlee-sweet", title: "Shurlee Sweet", category: "Photography" },
+  { slug: "nb-summer-2019", url: "https://tameubem.com/nb-summer-2019", title: "NB Summer 2019", category: "Photography" },
+  { slug: "tiana-joshua-tree-beadwork-photoshoot", url: "https://tameubem.com/tiana-joshua-tree-beadwork-photoshoot", title: "Tiana — Joshua Tree", category: "Photography" },
 ];
 
 const CHROME_PATTERNS = [
@@ -90,7 +93,7 @@ function buildMarkdown(page, images) {
   let md = `---
 category: ${toYamlString(page.category)}
 title: ${toYamlString(page.title)}
-description: ${toYamlString(page.description)}
+description: ${toYamlString(PLACEHOLDER_DESCRIPTION)}
 thumbnail:
   url: ${toYamlString(thumbnail)}
   alt: ${toYamlString(alt)}

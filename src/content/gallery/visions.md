@@ -1,7 +1,7 @@
 ---
 category: "Photography"
 title: "Visions"
-description: "Visions — Ta Meu Bem jewelry photography."
+description: "Placeholder description — replace with your own project copy."
 thumbnail:
   url: "https://images.squarespace-cdn.com/content/v1/57e1d57c6b8f5b5e75aaecbb/1712276479629-M9LHH38BJU3JSLRXBI8L/TAMEUBEM+JEWELRY+NOVEMBER+2019+%2830%29.jpg"
   alt: "Visions"

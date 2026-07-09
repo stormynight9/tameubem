@@ -1,7 +1,7 @@
 ---
 category: "Beadwork"
 title: "Loom Weaving"
-description: "Handwoven loom beadwork pieces and chokers by Ta Meu Bem."
+description: "Placeholder description — replace with your own project copy."
 thumbnail:
   url: "https://images.squarespace-cdn.com/content/v1/57e1d57c6b8f5b5e75aaecbb/1557125062248-WKSAKFAMCOY93BH9L7EN/image-asset.jpeg"
   alt: "Loom Weaving"

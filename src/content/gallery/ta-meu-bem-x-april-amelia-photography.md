@@ -1,7 +1,7 @@
 ---
 category: "Photography"
 title: "Ta Meu Bem x April Amelia Photography"
-description: "Collaboration with April Amelia Photography."
+description: "Placeholder description — replace with your own project copy."
 thumbnail:
   url: "https://images.squarespace-cdn.com/content/v1/57e1d57c6b8f5b5e75aaecbb/c4451d66-24a1-41bb-abf4-ca4f9afb4fd2/Ta+Meu+Bem+Beadwork+x+April+Amelia+Photo.jpg"
   alt: "Ta Meu Bem x April Amelia Photography"

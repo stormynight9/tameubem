@@ -1,7 +1,7 @@
 ---
 category: "Beadwork"
 title: "My Beadwork"
-description: "A curated portfolio of beadwork jewelry and embroidery."
+description: "Placeholder description — replace with your own project copy."
 thumbnail:
   url: "https://images.squarespace-cdn.com/content/v1/57e1d57c6b8f5b5e75aaecbb/1541642264992-TK2HH1YTTII38KPABLFF/bead+embroidery+-+ancestors+by+ta+meu+bem.jpg"
   alt: "My Beadwork"
