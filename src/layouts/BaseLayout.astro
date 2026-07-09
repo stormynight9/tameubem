@@ -11,12 +11,18 @@ import Navigation from "@/components/global/Navigation.astro";
 // Hides the big logo, navigation, or footer on selected screens by passing props:
 // <BaseLayout hideBigLogo={true} hideNavigation={true} hideFooter={true}>
 
-const { hideBigLogo = false, hideNavigation = false, hideFooter = false } = Astro.props;
+const {
+  hideBigLogo = false,
+  hideNavigation = false,
+  hideFooter = false,
+  title,
+  description,
+} = Astro.props;
 ---
 
 <html lang="en" class="scroll-smooth">
   <head>
-    <BaseHead />
+    <BaseHead title={title} description={description} />
   </head>
   <body class="flex flex-col bg-white min-h-svh">
     {

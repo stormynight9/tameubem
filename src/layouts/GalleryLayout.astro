@@ -8,7 +8,13 @@ const { frontmatter } = Astro.props;
 const images = frontmatter.images ?? [];
 ---
 
-<BaseLayout hideBigLogo={true} hideNavigation={true} hideFooter={true}>
+<BaseLayout
+  hideBigLogo={true}
+  hideNavigation={true}
+  hideFooter={true}
+  title={frontmatter.title}
+  description={frontmatter.description}
+>
   <section class={`${frontmatter.bgColor ?? ""} ${frontmatter.textColor ?? ""}`}>
     <Wrapper variant="standard" class="py-8 text-center">
       <Text

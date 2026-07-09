@@ -1,32 +1,40 @@
 ---
-
 import { AstroSeo } from "@lexingtonthemes/seo";
+
+interface Props {
+  title?: string;
+  description?: string;
+  canonical?: string;
+}
+
+const SITE_NAME = "Ta Meu Bem";
+const DEFAULT_DESCRIPTION =
+  "Handmade beadwork, jewelry, and photography by Ta Meu Bem.";
+
+const {
+  title,
+  description = DEFAULT_DESCRIPTION,
+  canonical = Astro.site
+    ? new URL(Astro.url.pathname, Astro.site).href
+    : Astro.url.href,
+} = Astro.props;
+
+const seoTitle = title ? `${title} | ${SITE_NAME}` : SITE_NAME;
 ---
 
 <AstroSeo
-  title="Your Page Title"
-  description="A detailed description of your page content."
-  canonical="https://yourwebsite.com/current-page"
+  title={seoTitle}
+  description={description}
+  canonical={canonical}
   openGraph={{
-    url: "https://yourwebsite.com/current-page",
-    title: "Your Page Title",
-    description: "A detailed description of your page content.",
-    images: [
-      {
-        url: "https://yourwebsite.com/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Open Graph Image Alt",
-        type: "image/jpeg",
-      },
-    ],
-    site_name: "Your Site Name",
+    url: canonical,
+    title: seoTitle,
+    description,
+    site_name: SITE_NAME,
     type: "website",
     locale: "en_US",
   }}
   twitter={{
-    handle: "@yourhandle",
-    site: "@yourwebsite",
     cardType: "summary_large_image",
   }}
 />
