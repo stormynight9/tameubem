@@ -1,0 +1,26 @@
+---
+category: "Beadwork"
+title: "Ceremonial Beaded Veils"
+description: "Ceremonial beaded veils and jewelry."
+thumbnail:
+  url: "https://images.squarespace-cdn.com/content/v1/57e1d57c6b8f5b5e75aaecbb/1742927194836-IYX4P7HTD3S6YB0Z7KM5/TA+MEU+BEM+VALENTINES+JEWELRY+SHOOT+JANUARY+2020+%2837%29.jpg"
+  alt: "Ceremonial Beaded Veils"
+imageGrid: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+images:
+  - url: "https://images.squarespace-cdn.com/content/v1/57e1d57c6b8f5b5e75aaecbb/1742927199263-ZWVE2LRSPDMPWGUYHPLR/TA+MEU+BEM+VALENTINES+JEWELRY+SHOOT+JANUARY+2020+%2834%29.jpg"
+    alt: "Ceremonial Beaded Veils"
+  - url: "https://images.squarespace-cdn.com/content/v1/57e1d57c6b8f5b5e75aaecbb/1672729929788-MB3A913IL4F8DQ2L1LE5/TA+MEU+BEM+VALENTINES+JEWELRY+SHOOT+JANUARY+2020+%2846%29.jpg"
+    alt: "Ceremonial Beaded Veils"
+  - url: "https://images.squarespace-cdn.com/content/v1/57e1d57c6b8f5b5e75aaecbb/1672729930307-ET8TIYSKA8UHL6JS6WEA/TA+MEU+BEM+VALENTINES+JEWELRY+SHOOT+JANUARY+2020+%2859%29.jpg"
+    alt: "Ceremonial Beaded Veils"
+  - url: "https://images.squarespace-cdn.com/content/v1/57e1d57c6b8f5b5e75aaecbb/1672730045426-HY9IWVY7BKC4FEEMW8VW/TA+MEU+BEM+VALENTINES+JEWELRY+SHOOT+JANUARY+2020+%2862%29.jpg"
+    alt: "Ceremonial Beaded Veils"
+  - url: "https://images.squarespace-cdn.com/content/v1/57e1d57c6b8f5b5e75aaecbb/1742927205051-EUV6N4VUGWGVB58KXBNC/TA+MEU+BEM+VALENTINES+JEWELRY+SHOOT+JANUARY+2020+%2839%29.jpg"
+    alt: "Ceremonial Beaded Veils"
+  - url: "https://images.squarespace-cdn.com/content/v1/57e1d57c6b8f5b5e75aaecbb/1672730015231-LTSRXOWF599I1OELLQAC/TA+MEU+BEM+VALENTINES+JEWELRY+SHOOT+JANUARY+2020+%2866%29.jpg"
+    alt: "Ceremonial Beaded Veils"
+  - url: "https://images.squarespace-cdn.com/content/v1/57e1d57c6b8f5b5e75aaecbb/1672730020498-0CFDDDTECG5BPCFAQQNJ/TA+MEU+BEM+VALENTINES+JEWELRY+SHOOT+JANUARY+2020+%2880%29.jpg"
+    alt: "Ceremonial Beaded Veils"
+  - url: "https://images.squarespace-cdn.com/content/v1/57e1d57c6b8f5b5e75aaecbb/1672730098899-9YLQRHTL5ZQ3SY97YV17/TA+MEU+BEM+VALENTINES+JEWELRY+SHOOT+JANUARY+2020+%2882%29.jpg"
+    alt: "Ceremonial Beaded Veils"
+---

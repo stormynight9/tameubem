@@ -1,38 +1,38 @@
 ---
-// Assets
-import { Image } from "astro:assets";
-// Fundations
+import ContentImage from "@/components/fundations/elements/ContentImage.astro";
 import Text from "@/components/fundations/elements/Text.astro";
-// Content
-const { title, url, thumbnail, category } = {
-  url: "/gallery/posts/" + Astro.props.post.id,
+
+const { title, description, url, thumbnail } = {
+  url: "/" + Astro.props.post.id,
   title: Astro.props.post.data.title,
-  category: Astro.props.post.data.category,
+  description: Astro.props.post.data.description,
   thumbnail: Astro.props.post.data.thumbnail.url,
 };
 ---
 
-<article class="relative">
+<article class="relative flex flex-col group">
   <a
     href={url}
-    title={title}
-    title={`Read more: ${title}`}
+    title={`See more: ${title}`}
     aria-label={`See more of: ${title}`}
     class="absolute inset-0 z-10"
   >
   </a>
 
-  <Image
+  <ContentImage
     src={thumbnail}
     alt={title}
     width={1000}
     height={1000}
+    sizes="(max-width: 768px) 90vw, 33vw"
     class="object-cover object-center w-full aspect-square"
   />
   <div class="pt-4 mt-4 border-t border-base-200">
-    <Text tag="h3" variant="textBase" class="font-medium text-base-900"
+    <Text tag="h3" variant="textSM" class="font-medium text-base-900"
       >{title}</Text
     >
-    <Text tag="p" variant="textSM" class="text-base-500">{category}</Text>
+    <Text tag="p" variant="textSM" class="text-base-500 mt-2"
+      >{description}</Text
+    >
   </div>
 </article>

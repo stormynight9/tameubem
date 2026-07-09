@@ -1,0 +1,26 @@
+---
+category: "Photography"
+title: "NB Summer 2019"
+description: "Ta Meu Bem jewelry — Summer 2019."
+thumbnail:
+  url: "https://images.squarespace-cdn.com/content/v1/57e1d57c6b8f5b5e75aaecbb/fc341c62-38d6-48f5-939c-e227f9cfb373/TA+MEU+BEM+JEWELRY+SUMMER+2019-finals-0079.jpg"
+  alt: "NB Summer 2019"
+imageGrid: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+images:
+  - url: "https://images.squarespace-cdn.com/content/v1/57e1d57c6b8f5b5e75aaecbb/c5695eb5-5da9-4ca5-8192-a3581012f2e0/TA+MEU+BEM+JEWELRY+SUMMER+2019-finals-0034.jpg"
+    alt: "NB Summer 2019"
+  - url: "https://images.squarespace-cdn.com/content/v1/57e1d57c6b8f5b5e75aaecbb/91137c72-2a07-496c-b9a9-0a351d9ebaa2/Ta+Meu+Bem+Jewelry.jpg"
+    alt: "NB Summer 2019"
+  - url: "https://images.squarespace-cdn.com/content/v1/57e1d57c6b8f5b5e75aaecbb/c96749f5-4ad3-4747-839c-301ea8805743/TA+MEU+BEM+JEWELRY+SUMMER+2019-finals-0017.jpg"
+    alt: "NB Summer 2019"
+  - url: "https://images.squarespace-cdn.com/content/v1/57e1d57c6b8f5b5e75aaecbb/cada50c8-e006-4e4a-964b-1fb573eb7bdb/TA+MEU+BEM+JEWELRY+SUMMER+2019-finals-0047.jpg"
+    alt: "NB Summer 2019"
+  - url: "https://images.squarespace-cdn.com/content/v1/57e1d57c6b8f5b5e75aaecbb/fe28b2e1-a6da-47e8-a347-136b6059facb/TA+MEU+BEM+JEWELRY+SUMMER+2019-finals-0075.jpg"
+    alt: "NB Summer 2019"
+  - url: "https://images.squarespace-cdn.com/content/v1/57e1d57c6b8f5b5e75aaecbb/c88b4a60-7d1c-4ba5-ba80-7bd996dd8ae4/TA+MEU+BEM+JEWELRY+SUMMER+2019-finals-0006.jpg"
+    alt: "NB Summer 2019"
+  - url: "https://images.squarespace-cdn.com/content/v1/57e1d57c6b8f5b5e75aaecbb/cbf71e0d-585a-4d6b-a157-d495eb8f8454/TA+MEU+BEM+JEWELRY+SUMMER+2019-finals-0060.jpg"
+    alt: "NB Summer 2019"
+  - url: "https://images.squarespace-cdn.com/content/v1/57e1d57c6b8f5b5e75aaecbb/c5e77488-df66-4628-96b2-7e8c3fe7a96e/TA+MEU+BEM+JEWELRY+SUMMER+2019-finals-0072.jpg"
+    alt: "NB Summer 2019"
+---

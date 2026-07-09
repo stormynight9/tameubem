@@ -73,7 +73,7 @@ const gallery = defineCollection({
       title: z.string(),
       description: z.string(),
       thumbnail: z.object({
-        url: image(),
+        url: z.union([z.string().url(), image()]),
         alt: z.string(),
       }),
       thumbnailClass: z.string().optional(),
@@ -81,7 +81,7 @@ const gallery = defineCollection({
       images: z
         .array(
           z.object({
-            url: image(),
+            url: z.union([z.string().url(), image()]),
             alt: z.string(),
             class: z.string().optional(),
           })

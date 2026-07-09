@@ -21,7 +21,15 @@
       "type": "object",
       "properties": {
         "url": {
-          "type": "string"
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uri"
+            },
+            {
+              "type": "string"
+            }
+          ]
         },
         "alt": {
           "type": "string"
@@ -44,7 +52,15 @@
         "type": "object",
         "properties": {
           "url": {
-            "type": "string"
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "uri"
+              },
+              {
+                "type": "string"
+              }
+            ]
           },
           "alt": {
             "type": "string"

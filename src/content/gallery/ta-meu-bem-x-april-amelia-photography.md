@@ -1,0 +1,28 @@
+---
+category: "Photography"
+title: "Ta Meu Bem x April Amelia Photography"
+description: "Collaboration with April Amelia Photography."
+thumbnail:
+  url: "https://images.squarespace-cdn.com/content/v1/57e1d57c6b8f5b5e75aaecbb/c4451d66-24a1-41bb-abf4-ca4f9afb4fd2/Ta+Meu+Bem+Beadwork+x+April+Amelia+Photo.jpg"
+  alt: "Ta Meu Bem x April Amelia Photography"
+imageGrid: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+images:
+  - url: "https://images.squarespace-cdn.com/content/v1/57e1d57c6b8f5b5e75aaecbb/561757e1-9bd0-4c55-800f-ac6e676e37cd/April+Amelia+Photography+x+Ta+Meu+Bem+Beadwork.jpg"
+    alt: "Ta Meu Bem x April Amelia Photography"
+  - url: "https://images.squarespace-cdn.com/content/v1/57e1d57c6b8f5b5e75aaecbb/619b0ec1-3a19-45a7-af6e-cab11498b5d9/Screenshot+2024-11-20+at+9.26.50%E2%80%AFAM.png"
+    alt: "Ta Meu Bem x April Amelia Photography"
+  - url: "https://images.squarespace-cdn.com/content/v1/57e1d57c6b8f5b5e75aaecbb/1742718976068-WV5SWJT5Z1682K18IYQZ/Ta+Meu+Bem+x+April+Amelia+Vogue.jpg"
+    alt: "Ta Meu Bem x April Amelia Photography"
+  - url: "https://images.squarespace-cdn.com/content/v1/57e1d57c6b8f5b5e75aaecbb/19db5f97-e6b1-4371-9e8a-f50e07aad703/415000050_896524952482481_2915319465963401956_n.jpg"
+    alt: "Ta Meu Bem x April Amelia Photography"
+  - url: "https://images.squarespace-cdn.com/content/v1/57e1d57c6b8f5b5e75aaecbb/f2265edf-b3c9-4a47-9640-5e3a1721fec1/414969492_896525042482472_8949945989159062519_n.jpg"
+    alt: "Ta Meu Bem x April Amelia Photography"
+  - url: "https://images.squarespace-cdn.com/content/v1/57e1d57c6b8f5b5e75aaecbb/a04bb637-7968-45d4-9343-c32cabd340ed/415021033_896525015815808_528524137348373909_n.jpg"
+    alt: "Ta Meu Bem x April Amelia Photography"
+  - url: "https://images.squarespace-cdn.com/content/v1/57e1d57c6b8f5b5e75aaecbb/53e2057d-6e03-4574-961d-162b08269933/Screenshot+2024-01-19+at+11.50.51%E2%80%AFPM.png"
+    alt: "Ta Meu Bem x April Amelia Photography"
+  - url: "https://images.squarespace-cdn.com/content/v1/57e1d57c6b8f5b5e75aaecbb/e1d4db16-1d91-43b5-9e58-f755abc88854/414963828_896524859149157_436703208065702863_n.jpg"
+    alt: "Ta Meu Bem x April Amelia Photography"
+  - url: "https://images.squarespace-cdn.com/content/v1/57e1d57c6b8f5b5e75aaecbb/851516cf-7293-4031-adf7-7a236d7a6300/Screenshot+2024-11-20+at+9.27.29%E2%80%AFAM.png"
+    alt: "Ta Meu Bem x April Amelia Photography"
+---

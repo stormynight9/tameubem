@@ -5,7 +5,7 @@ import { Image } from "astro:assets";
 import Text from "@/components/fundations/elements/Text.astro";
 // Content
 const { title, url, thumbnail, category } = {
-  url: "/gallery/posts/" + Astro.props.post.id,
+  url: "/" + Astro.props.post.id,
   title: Astro.props.post.data.title,
   category: Astro.props.post.data.category,
   thumbnail: Astro.props.post.data.thumbnail.url,
